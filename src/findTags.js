@@ -13,7 +13,22 @@ import traverse from 'babel-traverse';
 export default function findTags(filename, source) {
   let ast = babylon.parse(source, {
     sourceType: 'module',
-    plugins: ['jsx', 'flow'],
+    plugins: [
+      'jsx',
+      'flow',
+      'asyncFunctions',
+      'classConstructorCall',
+      'doExpressions',
+      'trailingFunctionCommas',
+      'objectRestSpread',
+      'decorators',
+      'classProperties',
+      'exportExtensions',
+      'exponentiationOperator',
+      'asyncGenerators',
+      'functionBind',
+      'functionSent',
+    ],
   });
   let tags = [];
 
